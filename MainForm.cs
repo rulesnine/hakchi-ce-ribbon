@@ -1,4 +1,4 @@
-﻿using AutoUpdaterDotNET;
+using AutoUpdaterDotNET;
 using com.clusterrr.hakchi_gui.data;
 using com.clusterrr.hakchi_gui.ModHub;
 using com.clusterrr.hakchi_gui.ModHub.Repository;
@@ -110,6 +110,7 @@ namespace com.clusterrr.hakchi_gui
             StaticRef = this;
             InitializeComponent();
             FormInitialize();
+            HakchiCE.Ribbon.HakchiRibbon.Attach(this);
         }
 
         public static void PopulateMaxPlayers(ComboBox maxPlayersComboBox)

@@ -1,0 +1,27 @@
+HAKCHI RIBBON 1.0 - ACTUALIZACION PARA CE 3.9.3
+
+1. Extrae este ZIP en una carpeta.
+2. Ejecuta Instalar.cmd. Copiara el acceso a:
+   C:\NES hack\hakchi2-ce-3.9.3-portable
+3. Cierra todas las ventanas de Hakchi, incluidos los dialogos de modulos.
+4. En esa carpeta abre hakchi-ribbon.exe.
+
+Tambien puedes copiar hakchi-ribbon.exe y hakchi-ribbon.exe.config
+manualmente junto al hakchi.exe que utilizas.
+
+No sustituye hakchi.exe. Usa los mismos juegos y configuracion.
+Para volver a la interfaz anterior abre hakchi.exe.
+
+Cinta en espanol: Inicio / Juegos / Modulos / Consola.
+El menu Ver (View) permite ocultar la cinta durante la sesion.
+
+Verificado: carga de la ventana original CE 3.9.3, disposicion de las
+cuatro pestanas, acciones de botones y menus, estados deshabilitados,
+ocultacion y desplazamiento en ventanas estrechas.
+No se realizaron transferencias ni cambios en la consola.
+
+Codigo fuente completo y compilacion:
+https://github.com/rulesnine/hakchi-ce-ribbon
+Carpeta Ribbon: Build.ps1, Launcher.cs y HakchiRibbon.cs.
+Origen: https://github.com/TeamShinkansen/Hakchi2-CE/tree/v3.9.3
+Licencia GPLv3, incluida en LICENSE.
