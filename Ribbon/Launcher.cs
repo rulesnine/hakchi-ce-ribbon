@@ -23,25 +23,29 @@ namespace HakchiCE.Ribbon
                     }
                 }
                 Assembly app = Assembly.LoadFrom(original);
-                using (System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer()) {
-                    timer.Interval = 100;
-                    timer.Tick += delegate {
-                        foreach (Form form in Application.OpenForms) {
-                            if (form.GetType().FullName == "com.clusterrr.hakchi_gui.MainForm") {
-                                HakchiRibbon.Attach(form);
-                                form.Text += " | Ribbon 1.0";
-                                timer.Stop();
-                                break;
-                            }
-                        }
-                    };
-                    timer.Start();
-                    app.EntryPoint.Invoke(null, new object[] {args});
-                }
+                RunWithRibbon(delegate { app.EntryPoint.Invoke(null, new object[] {args}); });
             } catch (Exception ex) {
                 Exception reason = ex is TargetInvocationException && ex.InnerException != null ? ex.InnerException : ex;
                 MessageBox.Show(reason.Message, "Hakchi Ribbon: no se pudo iniciar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        // Idle subscription creates no native window before the host configures WinForms.
+        internal static void RunWithRibbon(Action runHost)
+        {
+            EventHandler idle = null;
+            idle = delegate {
+                foreach (Form form in Application.OpenForms) {
+                    if (form.GetType().FullName == "com.clusterrr.hakchi_gui.MainForm") {
+                        Application.Idle -= idle;
+                        HakchiRibbon.Attach(form);
+                        form.Text += " | Ribbon 1.0.1";
+                        break;
+                    }
+                }
+            };
+            Application.Idle += idle;
+            try { runHost(); }
+            finally { Application.Idle -= idle; }
         }
         private static Mutex OpenExisting()
         {
@@ -50,3 +54,4 @@ namespace HakchiCE.Ribbon
         }
     }
 }
+
