@@ -44,3 +44,22 @@ Basado en TeamShinkansen/Hakchi2-CE, etiqueta v3.9.3,
 commit 25bfcfd04b8ed12f7d513dc87c2a0f7096d38ebc.
 Se conserva la licencia GPL del proyecto (ver LICENSE).
 Los archivos fuente del lanzador y de la cinta se distribuyen bajo esa misma licencia.
+
+## Carátulas en Ribbon 1.1
+
+El botón Google se convierte en Carátulas. Consulta Named_Boxarts de
+https://thumbnails.libretro.com por nombre y consola, muestra una vista previa
+y guarda la elección mediante la propiedad Image original de Hakchi.
+No requiere cuenta ni claves de API. La búsqueda de Google dentro del control
+antiguo ya no se utiliza para este botón. Google (navegador) abre la búsqueda
+en el navegador habitual; una imagen puede importarse por URL directa o archivo.
+No modifica la búsqueda automática de carátulas por lotes del menú contextual.
+
+Se comprobaron descargas reales de NES y Game Boy, el selector completo, el
+arranque de WinForms y el guardado de imagen/metadatos en una biblioteca de prueba.
+Los catálogos dependen de la disponibilidad de Libretro y de que el juego exista
+en la colección. Puede buscarse con un nombre más corto o elegir otra consola.
+
+Pruebas: CoverTests.cs (requiere internet), StartupTests.cs y Tests.cs.
+Se compilan con csc de .NET Framework, incluyendo CoverArt.cs y los archivos
+que utilice cada prueba. Seleccionar /main:CoverTests, /main:StartupTests o /main:RibbonTests.

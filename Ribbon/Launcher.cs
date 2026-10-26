@@ -38,7 +38,7 @@ namespace HakchiCE.Ribbon
                     if (form.GetType().FullName == "com.clusterrr.hakchi_gui.MainForm") {
                         Application.Idle -= idle;
                         HakchiRibbon.Attach(form);
-                        form.Text += " | Ribbon 1.0.1";
+                        form.Text += " | Ribbon 1.1";
                         break;
                     }
                 }
@@ -54,4 +54,5 @@ namespace HakchiCE.Ribbon
         }
     }
 }
+
 

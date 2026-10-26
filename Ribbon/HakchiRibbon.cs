@@ -11,6 +11,7 @@ namespace HakchiCE.Ribbon
         public static void Attach(Form form)
         {
             if (form.Controls.ContainsKey("hakchiRibbon")) return;
+            CoverArtSupport.Attach(form);
             MenuStrip menu = form.MainMenuStrip;
             if (menu == null) foreach (Control control in form.Controls) if (control is MenuStrip) { menu = (MenuStrip)control; break; }
             if (menu == null) return;
@@ -163,4 +164,5 @@ namespace HakchiCE.Ribbon
         }
     }
 }
+
 

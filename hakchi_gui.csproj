@@ -127,6 +127,7 @@
   <ItemGroup>
     <Compile Include="ApplicationDeploymentWrapper.cs" />
     <Compile Include="Ribbon\HakchiRibbon.cs" />
+    <Compile Include="Ribbon\CoverArt.cs" />
     <Compile Include="AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>

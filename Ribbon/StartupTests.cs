@@ -20,7 +20,7 @@ class StartupTests {
     using(var form=new com.clusterrr.hakchi_gui.MainForm())
     using(var close=new Timer()) {
      close.Interval=250;
-     close.Tick+=delegate {attached=form.Controls.ContainsKey("hakchiRibbon") && form.Text.Contains("1.0.1");form.Close();};
+     close.Tick+=delegate {attached=form.Controls.ContainsKey("hakchiRibbon") && form.Text.Contains("1.1");form.Close();};
      form.Shown+=delegate {close.Start();};
      Application.Run(form);
     }
@@ -31,3 +31,4 @@ class StartupTests {
   } catch(Exception ex) { Console.WriteLine(ex);return 1; }
  }
 }
+
